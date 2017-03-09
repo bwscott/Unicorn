@@ -35,9 +35,10 @@ namespace Unicorn.Publishing
 
 				var publishOptions = new PublishOptions(triggerItem.Database, database, PublishMode.SingleItem, triggerItem.Language, DateTime.UtcNow) { RootItem = triggerItem };
 
-				var result = new Publisher(publishOptions).PublishWithResult();
+			    var result = new Publisher(publishOptions);
+			    var job = result.PublishAsync();                                
 
-				if (progress != null) progress.ReportStatus("> Published synced items to {0} (New: {1}, Updated: {2}, Deleted: {3} Skipped: {4})", MessageType.Debug, database.Name, result.Statistics.Created, result.Statistics.Updated, result.Statistics.Deleted, result.Statistics.Skipped);
+				//if (progress != null) progress.ReportStatus("> Published synced items to {0} (New: {1}, Updated: {2}, Deleted: {3} Skipped: {4})", MessageType.Debug, database.Name, result.Statistics.Created, result.Statistics.Updated, result.Statistics.Deleted, result.Statistics.Skipped);
 			}
 
 			return true;

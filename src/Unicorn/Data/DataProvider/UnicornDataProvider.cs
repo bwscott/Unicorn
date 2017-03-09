@@ -62,7 +62,7 @@ namespace Unicorn.Data.DataProvider
 			_sourceDataStore = sourceDataStore;
 
 			// enable capturing recycle bin and archive restores to serialize the target item if included
-			EventManager.Subscribe<RestoreItemCompletedEvent>(HandleItemRestored);
+			//EventManager.Subscribe<RestoreItemCompletedEvent>(HandleItemRestored);
 
 			try
 			{
@@ -505,7 +505,7 @@ namespace Unicorn.Data.DataProvider
 		/// Restoring items from the recycle bin does not invoke the data provider at all, so we have to attach to its event
 		/// to cause restored items to be rewritten to disk if they are included.
 		/// </summary>
-		protected virtual void HandleItemRestored(RestoreItemCompletedEvent restoreItemCompletedEvent)
+		/*protected virtual void HandleItemRestored(RestoreItemCompletedEvent restoreItemCompletedEvent)
 		{
 			if (!restoreItemCompletedEvent.DatabaseName.Equals(Database.Name, StringComparison.Ordinal)) return;
 
@@ -523,7 +523,7 @@ namespace Unicorn.Data.DataProvider
 
 				SerializeItemIfIncluded(iitem, "Restored");
 			}, null, 2000, Timeout.Infinite);
-		}
+		}*/
 
 		protected virtual bool SerializeItemIfIncluded(IItemData item, string triggerReason)
 		{
