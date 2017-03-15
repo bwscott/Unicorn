@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Unicorn</RootNamespace>
     <AssemblyName>Unicorn</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -44,6 +44,17 @@
       <HintPath>..\..\packages\MicroCHAP.1.2.0.0\lib\net45\MicroCHAP.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rainbow, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Rainbow\src\Rainbow.Storage.Sc\bin\Debug\Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Sc, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Rainbow\src\Rainbow.Storage.Sc\bin\Debug\Rainbow.Storage.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Yaml">
+      <HintPath>..\..\..\Rainbow\src\Rainbow.Storage.Yaml\bin\Debug\Rainbow.Storage.Yaml.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\v7\Sitecore.Kernel.dll</HintPath>
@@ -64,40 +75,40 @@
     <Compile Include="Configuration\Dependencies\ConfigurationDependencyResolver.cs" />
     <Compile Include="Configuration\Dependencies\ExplicitConfigurationDependency.cs" />
     <Compile Include="Configuration\Dependencies\IConfigurationDependency.cs" />
-    <Compile Include="ControlPanel\Controls\BatchProcessingControls.cs" />
-    <Compile Include="ControlPanel\Controls\ConfigurationInfo.cs" />
-    <Compile Include="ControlPanel\Controls\GlobalWarnings.cs" />
-    <Compile Include="ControlPanel\Controls\QuickReference.cs" />
-    <Compile Include="ControlPanel\Controls\NoConfigurations.cs" />
-    <Compile Include="ControlPanel\UnicornStringConsole.cs" />
-    <Compile Include="ControlPanel\Security\SitecoreDatabaseChallengeStore.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\ConfigurationHealthVerb.cs" />
-    <Compile Include="ControlPanel\VisualStudio\StreamWriterExtensions.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\ChallengeVerb.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\HandleAccessDenied.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\RenderControlPanel.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\ReserializeVerb.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\SyncVerb.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Logging\RemoteProgressStatus.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\ConfigurationsVerb.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VersionVerb.cs" />
-    <Compile Include="ControlPanel\Responses\ApiResponse.cs" />
-    <Compile Include="ControlPanel\Responses\ControlPanelPageResponse.cs" />
-    <Compile Include="ControlPanel\Responses\IResponse.cs" />
-    <Compile Include="ControlPanel\Responses\PlainTextResponse.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Logging\MessageLevel.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Logging\RemoteLogger.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Logging\ReportType.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VSReserializeVerb.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VSSyncVerb.cs" />
-    <Compile Include="ControlPanel\VisualStudio\Responses\StreamingEncodedLogResponse.cs" />
-    <Compile Include="ControlPanel\Security\IUnicornAuthenticationProvider.cs" />
-    <Compile Include="ControlPanel\Security\ChapAuthenticationProvider.cs" />
-    <Compile Include="ControlPanel\Security\LegacyAuthenticationProvider.cs" />
-    <Compile Include="ControlPanel\Security\SecurityState.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\UnicornControlPanelRequestPipelineProcessor.cs" />
-    <Compile Include="ControlPanel\Pipelines\UnicornControlPanelRequest\UnicornControlPanelRequestPipelineArgs.cs" />
-    <Compile Include="ControlPanel\WebConsoleUtility.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\BatchProcessingControls.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\ConfigurationInfo.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\GlobalWarnings.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\QuickReference.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\NoConfigurations.cs" />
+    <Compile Include="Configuration\ControlPanel\UnicornStringConsole.cs" />
+    <Compile Include="Configuration\ControlPanel\Security\SitecoreDatabaseChallengeStore.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\ConfigurationHealthVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\StreamWriterExtensions.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\ChallengeVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\HandleAccessDenied.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\RenderControlPanel.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\ReserializeVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\SyncVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Logging\RemoteProgressStatus.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\ConfigurationsVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VersionVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\Responses\ApiResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\Responses\ControlPanelPageResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\Responses\IResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\Responses\PlainTextResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Logging\MessageLevel.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Logging\RemoteLogger.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Logging\ReportType.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VSReserializeVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Pipelines\UnicornControlPanelRequest\VSSyncVerb.cs" />
+    <Compile Include="Configuration\ControlPanel\VisualStudio\Responses\StreamingEncodedLogResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\Security\IUnicornAuthenticationProvider.cs" />
+    <Compile Include="Configuration\ControlPanel\Security\ChapAuthenticationProvider.cs" />
+    <Compile Include="Configuration\ControlPanel\Security\LegacyAuthenticationProvider.cs" />
+    <Compile Include="Configuration\ControlPanel\Security\SecurityState.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\UnicornControlPanelRequestPipelineProcessor.cs" />
+    <Compile Include="Configuration\ControlPanel\Pipelines\UnicornControlPanelRequest\UnicornControlPanelRequestPipelineArgs.cs" />
+    <Compile Include="Configuration\ControlPanel\WebConsoleUtility.cs" />
     <Compile Include="Data\DataProvider\DefaultUnicornDataProviderConfiguration.cs" />
     <Compile Include="Data\DataProvider\FieldChangeParser.cs" />
     <Compile Include="Data\DataProvider\ItemChangeApplyingItemData.cs" />
@@ -127,20 +138,20 @@
     <Compile Include="Configuration\ConfigurationUtility.cs" />
     <Compile Include="Configuration\MicroConfiguration.cs" />
     <Compile Include="Configuration\MicroResolutionException.cs" />
-    <Compile Include="ControlPanel\Controls\AccessDenied.cs" />
-    <Compile Include="ControlPanel\CheckIfFilterDisablerIsActive.cs" />
-    <Compile Include="ControlPanel\Controls\ConfigurationDetails.cs" />
-    <Compile Include="ControlPanel\Headings\HeadingService.cs" />
-    <Compile Include="ControlPanel\ItemFilterDisabler.cs" />
-    <Compile Include="ControlPanel\UnicornControlPanelPipelineProcessor.cs" />
-    <Compile Include="ControlPanel\ControlPanelUtility.cs" />
-    <Compile Include="ControlPanel\Controls\Heading.cs" />
-    <Compile Include="ControlPanel\Controls\Html5Footer.cs" />
-    <Compile Include="ControlPanel\Controls\Html5HeadAndStyles.cs" />
-    <Compile Include="ControlPanel\Controls\IControlPanelControl.cs" />
-    <Compile Include="ControlPanel\Controls\InitialSetup.cs" />
-    <Compile Include="ControlPanel\Controls\Literal.cs" />
-    <Compile Include="ControlPanel\Responses\WebConsoleResponse.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\AccessDenied.cs" />
+    <Compile Include="Configuration\ControlPanel\CheckIfFilterDisablerIsActive.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\ConfigurationDetails.cs" />
+    <Compile Include="Configuration\ControlPanel\Headings\HeadingService.cs" />
+    <Compile Include="Configuration\ControlPanel\ItemFilterDisabler.cs" />
+    <Compile Include="Configuration\ControlPanel\UnicornControlPanelPipelineProcessor.cs" />
+    <Compile Include="Configuration\ControlPanel\ControlPanelUtility.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\Heading.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\Html5Footer.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\Html5HeadAndStyles.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\IControlPanelControl.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\InitialSetup.cs" />
+    <Compile Include="Configuration\ControlPanel\Controls\Literal.cs" />
+    <Compile Include="Configuration\ControlPanel\Responses\WebConsoleResponse.cs" />
     <Compile Include="Data\ConfigurationDataStore.cs" />
     <Compile Include="Data\ISerializableItemExtensions.cs" />
     <Compile Include="Configuration\XmlConfigurationProvider.cs" />
@@ -233,27 +244,17 @@
     <None Include="Unicorn.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Rainbow\src\Rainbow.Storage.Sc\Rainbow.Storage.Sc.csproj">
-      <Project>{956afe8b-51cd-4d61-b8c1-bffdc749fd82}</Project>
-      <Name>Rainbow.Storage.Sc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Rainbow\src\Rainbow\Rainbow.csproj">
-      <Project>{8ff75c8b-2a9e-4d95-91ad-333071813199}</Project>
-      <Name>Rainbow</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ControlPanel\Headings\Unicorn.html" />
-    <EmbeddedResource Include="ControlPanel\Headings\Unicorn.svg.html" />
-    <EmbeddedResource Include="ControlPanel\Headings\ControlPanel.svg.html" />
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\Unicorn.html" />
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\Unicorn.svg.html" />
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\ControlPanel.svg.html" />
     <None Include="Pipelines\README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlPanel\Headings\Unicorn3.svg.html" />
-    <EmbeddedResource Include="ControlPanel\Headings\Unicorn2.svg.html" />
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\Unicorn3.svg.html" />
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\Unicorn2.svg.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlPanel\Headings\April.svg.html">
+    <EmbeddedResource Include="Configuration\ControlPanel\Headings\April.svg.html">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

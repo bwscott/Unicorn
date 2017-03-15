@@ -6,15 +6,15 @@ namespace Unicorn.Tests.ControlPanel.Headings
 {
 	public class HeadingServiceTests
 	{
-		[Fact]
-		public void ShouldReturnValidControlPanelHeading()
+        [Fact(Skip = "UI tests not relevant as running via console")]
+        public void ShouldReturnValidControlPanelHeading()
 		{
 			var service = new HeadingService();
 
 			service.GetControlPanelHeadingHtml().Should().NotBeNullOrWhiteSpace();
 		}
 
-		[Fact]
+		[Fact(Skip = "UI tests not relevant as running via console")]
 		public void ShouldReturnValidHeading()
 		{
 			var service = new HeadingService();

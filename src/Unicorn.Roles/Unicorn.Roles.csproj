@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Unicorn.Roles</RootNamespace>
     <AssemblyName>Unicorn.Roles</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Rainbow">
+      <HintPath>..\..\..\Rainbow\src\Rainbow\bin\Debug\Rainbow.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\lib\Sitecore\v7\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -64,10 +68,6 @@
     <Compile Include="RolePredicates\ConfigurationRolePredicate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Rainbow\src\Rainbow\Rainbow.csproj">
-      <Project>{8ff75c8b-2a9e-4d95-91ad-333071813199}</Project>
-      <Name>Rainbow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Unicorn\Unicorn.csproj">
       <Project>{82c4441b-e11e-4601-b6b7-c5ad71b2ab70}</Project>
       <Name>Unicorn</Name>
